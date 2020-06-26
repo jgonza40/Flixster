@@ -34,6 +34,9 @@ public class Movie {
     }
 
     public String getBackdropPath(){
+        if(backdropPath == "null") {
+            return null;
+        }
         return String.format("https://image.tmdb.org/t/p/w342/%s", backdropPath);
     }
 

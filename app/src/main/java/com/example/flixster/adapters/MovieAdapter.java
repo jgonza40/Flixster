@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.target.Target;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
 
@@ -76,10 +78,19 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             //if phone is in landscape mode -> backdrop; else portrait mode -> poster
             if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 imgURL = movie.getBackdropPath();
+                if(imgURL == null) {
+                    imgURL = movie.getPosterPath();
+                }
+                int radius = 30;
+                Glide.with(context).load(imgURL).transform(new RoundedCorners(radius)).override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL).placeholder(R.mipmap.placeholder_round).into(ivPoster);
             } else{
                 imgURL = movie.getPosterPath();
+                int radius = 30;
+                Glide.with(context).load(imgURL).transform(new RoundedCorners(radius)).override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL).placeholder(R.mipmap.placeholder_foreground).into(ivPoster);
             }
-            Glide.with(context).load(imgURL).into(ivPoster);
+            //int radius = 30; // corner radius, higher value = more rounded
+            //int margin = 10; // crop margin, set to 0 for corners with no crop
+
         }
     }
 }
