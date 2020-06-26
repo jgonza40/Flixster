@@ -36,7 +36,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+When creating a new Activity, it is essential that we add it to our list of activities in the manifests folder (otherwise switching from one activity to the next will crash the App). 
 
 ## Open-source libraries used
 
