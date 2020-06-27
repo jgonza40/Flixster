@@ -26,7 +26,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
     TextView tvOverview;
     RatingBar rbVoteAverage;
 
-    //Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
