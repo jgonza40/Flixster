@@ -11,6 +11,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-medium"
         android:text="TextView"
         android:textAlignment="center"
@@ -18,15 +19,16 @@
         android:textColor="#FFFFFF"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="18dp" />
+        app:layout_constraintTop_toBottomOf="@+id/ivPoster"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="364dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
         android:background="#2b2d2f"
         android:fontFamily="@font/actor"
@@ -39,14 +41,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rbVoteAverage" />
+        app:layout_constraintTop_toBottomOf="@+id/rbVoteAverage"
+        app:layout_constraintVertical_bias="0.027" />
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
         style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:numStars="5"
         android:progressBackgroundTint="#000000"
         android:progressTint="#43C9C9"
@@ -55,5 +58,15 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
