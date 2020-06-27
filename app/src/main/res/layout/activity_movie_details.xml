@@ -11,7 +11,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-medium"
         android:text="TextView"
         android:textAlignment="center"
@@ -41,15 +41,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPopularity"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvPopularity"
+        android:layout_width="193dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="4dp"
+        android:background="#2b2d2f"
+        android:fontFamily="@font/actor"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#E6E6E6"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rbVoteAverage"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
         style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:numStars="5"
         android:progressBackgroundTint="#000000"
         android:progressTint="#43C9C9"

@@ -24,6 +24,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     ImageView ivPoster;
     TextView tvTitle;
     TextView tvOverview;
+    TextView tvPopularity;
     RatingBar rbVoteAverage;
 
 
@@ -34,6 +35,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         // resolve the view objects
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         tvOverview = (TextView) findViewById(R.id.tvOverview);
+        tvPopularity = findViewById((R.id.tvPopularity));
         rbVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage);
         ivPoster = (ImageView) findViewById(R.id.ivPoster);
 
@@ -48,6 +50,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         Glide.with(getApplicationContext()).load(imgURL).transform(new RoundedCorners(radius)).override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL).placeholder(R.mipmap.placeholder_foreground).into(ivPoster);
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
+        tvPopularity.setText(movie.getPopularity());
 
         // vote average is 0..10, convert to 0..5 by dividing by 2
         float voteAverage = movie.getVoteAverage().floatValue();

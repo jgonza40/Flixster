@@ -1,5 +1,7 @@
 package com.example.flixster.models;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,6 +18,7 @@ public class Movie {
     String overview;
     String backdropPath;
     Double voteAverage;
+    Double popularity;
 
     // no-arg, empty constructor required for Parceler
     public Movie() {}
@@ -26,6 +29,7 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         voteAverage = jsonObject.getDouble("vote_average");
+        popularity = jsonObject.getDouble("popularity");
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -38,6 +42,11 @@ public class Movie {
 
     public Double getVoteAverage() {
         return voteAverage;
+    }
+
+    public String getPopularity() {
+        //Log.d("Popularity", String.valueOf(popularity));
+        return "Popularity: " + String.valueOf(popularity);
     }
 
     public String getPosterPath() {
